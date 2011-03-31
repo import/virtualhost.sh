@@ -109,19 +109,19 @@ version="1.23"
 # No point going any farther if we're not running correctly...
 if [ `whoami` != 'root' ]; then
 	echo "virtualhost.sh requires super-user privileges to work."
-	echo "Enter your password to continue..."
-	sudo $0 $* || exit 1
+#	echo "Enter your password to continue..."
+	exit 1
 fi
 
-if [ -z "$SUDO_USER" ]; then
-	/bin/echo "You must start this under your regular user account using sudo."
-	/bin/echo "Rerun using: sudo $0 $*"
-	exit 1
-elif [ $SUDO_USER = "root" ]; then
-	/bin/echo "You must start this under your regular user account (not root) using sudo."
-	/bin/echo "Rerun using: sudo $0 $*"
-	exit 1
-fi
+#if [ -z "$SUDO_USER" ]; then
+#	/bin/echo "You must start this under your regular user account using sudo."
+#	/bin/echo "Rerun using: sudo $0 $*"
+#	exit 1
+#elif [ $SUDO_USER = "root" ]; then
+#	/bin/echo "You must start this under your regular user account (not root) using sudo."
+#	/bin/echo "Rerun using: sudo $0 $*"
+#	exit 1
+#fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # If you are using this script on a production machine with a static IP address,
